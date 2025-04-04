@@ -1,0 +1,92 @@
+Cleaned data loaded: 50961 satır
+=== 1.1 Temel İstatistikler (FORCE_POS_1 & FORCE_POS_2) ===
+FORCE_POS_1 İstatistikleri:
+count    50961.000000
+mean        50.897963
+std          2.771223
+min          0.000000
+25%         49.600000
+50%         51.500000
+75%         52.300000
+max         71.000000
+Name: FORCE_POS_1, dtype: float64
+
+FORCE_POS_2 İstatistikleri:
+count    50961.000000
+mean        73.591333
+std          3.296760
+min          0.000000
+25%         73.000000
+50%         73.600000
+75%         74.300000
+max         99.700000
+Name: FORCE_POS_2, dtype: float64
+
+=== 1.3 NOK Verilerinin Analizi ===
+NOK veri sayısı: 696
+NOK tipleri ve sayıları:
+result
+NOK POS 2          442
+NOK POS 1 POS 2    230
+NOK POS 1           24
+Name: count, dtype: int64
+
+NOK (POS 1) sayısı: 254
+NOK (POS 2) sayısı: 672
+
+=== 2) Anomali Tespiti (Z-Score) ===
+FORCE_POS_1 anomali sayısı (|z|>3): 83
+NOK satırları içindeki anomali sayısı: 83
+
+=== 3) Performans Analizi ===
+OK verilerinde FORCE_POS_1 -> Ortalama: 50.898, Sigma: 2.771
+OK verilerinde FORCE_POS_2 -> Ortalama: 73.591, Sigma: 3.297
+
+Verilen örnek ortalamalarla kıyas:
+Örnek: FORCE_POS_1: 50,557 kg / Mevcut: 50.898
+Örnek: FORCE_POS_2: 73,087 kg / Mevcut: 73.591
+
+FORCE_POS_1 için CP: 0.601
+
+=== 4) Detaylı Raporlama ===
+
+Günlük Üretilen Parça Sayısı:
+date
+2025-01-07    7016
+2025-01-08    8955
+2025-01-09    3118
+2025-01-11    5936
+2025-01-13    9100
+2025-01-14    1912
+2025-01-17    4986
+2025-01-21    6746
+2025-01-22    3192
+dtype: int64
+
+Günlük OK/NOK Dağılımı:
+result      NOK POS 1  NOK POS 1 POS 2  NOK POS 2    OK
+date                                                   
+2025-01-07          0                3          8  7005
+2025-01-08         20               16         84  8835
+2025-01-09          2                4         24  3088
+2025-01-11          0                4        120  5812
+2025-01-13          2               12         68  9018
+2025-01-14          0               10         22  1880
+2025-01-17          0               44          9  4933
+2025-01-21          0               98         79  6569
+2025-01-22          0               39         28  3125
+
+Örnek NOK Kayıtları (ilk 10):
+           date      time                     code  FORCE_POS_1  FORCE_POS_2
+127  2025-01-07  02:57:24  302693.07/250106-025659         54.4          0.0
+158  2025-01-07  03:26:51  302693.07/250106-032627          0.1          0.0
+302  2025-01-07  04:13:21  302693.07/250106-041255         48.6         69.7
+898  2025-01-07  05:29:39  302693.07/250106-052915         71.0         99.7
+1814 2025-01-07  08:13:44  302693.07/250107-081304         49.3         70.8
+2689 2025-01-07  10:15:51  302693.07/250107-101535         47.8         69.0
+4848 2025-01-07  17:57:48  302693.07/250107-175724         48.0         69.5
+4859 2025-01-07  17:59:06  302693.07/250107-175844         46.6         68.2
+5161 2025-01-07  18:32:15  302693.07/250107-183150         46.9         68.5
+6309 2025-01-07  21:22:58  302693.07/250107-212234          0.0          0.0
+
+=== Analiz Tamamlandı ===
